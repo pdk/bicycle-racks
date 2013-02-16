@@ -6,9 +6,9 @@ where we store such data.
 I registered bikestandmap.com and bikerackmap.com and wasn't sure which was more 
 preferable. So, here are some google scores:
 
-"bike stand" about 1,140,000 results
-"bike rack" about 6,730,000 results
-"bicycle rack" about 991,000 results
-"bicycle stand" about 291,000 results
+- "bike stand" about 1,140,000 results
+- "bike rack" about 6,730,000 results
+- "bicycle rack" about 991,000 results
+- "bicycle stand" about 291,000 results
 
 So I'm going with bikerackmap.com as the standard domain.
