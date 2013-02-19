@@ -6,6 +6,8 @@
     "ntwitter": "0.5.x",
     "mongodb": "1.2.x",
     "express": "3.1.x",
-    "connect": "2.7.x"
+    "connect": "2.7.x",
+    "jade": "0.28.x",
+    "less-middleware": "0.1.x"
   }
 }
