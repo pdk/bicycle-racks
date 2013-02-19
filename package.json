@@ -1,8 +1,11 @@
 {
-  "name": "get-bicycle-rack-tweets",
-  "version": "0.0.1",
+  "name": "bikerackmap",
+  "description": "A service to share bicycle rack/stand locations.",
+  "version": "0.0.2",
   "dependencies": {
     "ntwitter": "0.5.x",
-    "mongodb": "1.2.x"
+    "mongodb": "1.2.x",
+    "express": "3.1.x",
+    "connect": "2.7.x"
   }
 }

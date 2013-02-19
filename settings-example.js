@@ -12,3 +12,5 @@ settings.mongodb = {};
 settings.mongodb.connect_url = "mongodb://username:password@serverhostname:portNNNN/databasename"
 
 module.exports = settings;
+
+settings.session_secret = 'random-string-here-for-session-secret';
