@@ -44,7 +44,7 @@ mongodb.Db.connect(settings.mongodb.connect_url, function(err, db) {
         assert.equal(null, err);
         console.log("found collection tweets");
 
-        app.get("/query", function(req, res) {
+        app.get("/query.json", function(req, res) {
             tweets.find(
                 {
                     "coordinates.coordinates": { $exists:1 }
