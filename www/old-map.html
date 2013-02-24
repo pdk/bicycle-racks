@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Bicycle Rack Locations Map</title>
+    <link href="map.css" rel="stylesheet">
+    <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script>
+      function initialize() {
+          // 21°28′N 157°59′W according to wikipedia
+          // 21.466667, -157.983333
+        var myLatlng = new google.maps.LatLng(21.466667, -157.983333);
+        var mapOptions = {
+          zoom: 11,
+          center: myLatlng,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+        var rack_data = [
+            { "created_at" : "Sun Mar 18 23:59:46 +0000 2012", "id_str" : "181530361627541506", "text" : "@BicycleRack kapolei ross http://t.co/pVYSOSBn", "user" : { "screen_name" : "phlatphrog" }, "coordinates" : { "coordinates" : [ -158.09003704, 21.33098901 ] } },
+            { "created_at" : "Sun Mar 18 23:51:05 +0000 2012", "id_str" : "181528174897799170", "text" : "@BicycleRack kapolei sports authority http://t.co/Ao9T5LVZ", "user" : { "screen_name" : "phlatphrog" } },
+            { "created_at" : "Thu Dec 20 00:08:33 +0000 2012", "id_str" : "281551620112781312", "text" : "@BicycleRack in front of sports authority http://t.co/HxHra6rY", "user" : { "screen_name" : "phlatphrog" }, "coordinates" : { "coordinates" : [ -158.0854515, 21.3375071 ] } },
+            { "created_at" : "Fri Dec 14 23:08:21 +0000 2012", "id_str" : "279724532804235264", "text" : "@BicycleRack in front of Barnes &amp; noble ala moana http://t.co/8epUQSsq", "user" : { "screen_name" : "phlatphrog" } },
+            { "created_at" : "Wed Dec 05 01:02:34 +0000 2012", "id_str" : "276129397902303232", "text" : "university of Hawaii west oahu @BicycleRack http://t.co/ipzzJpZt", "user" : { "screen_name" : "phlatphrog" }, "coordinates" : { "coordinates" : [ -158.05627547, 21.35456176 ] } },
+            { "created_at" : "Mon Mar 19 00:36:58 +0000 2012", "id_str" : "181539721896398850", "text" : "@BicycleRack Costco kapolei http://t.co/tUoi1wqJ", "user" : { "screen_name" : "phlatphrog" }, "coordinates" : { "coordinates" : [ -158.08742335, 21.32778286 ] } },
+            { "created_at" : "Mon Mar 19 00:33:54 +0000 2012", "id_str" : "181538950375149568", "text" : "@BicycleRack costco http://t.co/73x3IJni", "user" : { "screen_name" : "phlatphrog" }, "coordinates" : { "coordinates" : [ -158.08822436, 21.32681901 ] } },
+            { "created_at" : "Mon Mar 19 00:08:30 +0000 2012", "id_str" : "181532559803564032", "text" : "@BicycleRack down to earth kapolei http://t.co/WLPto6Do", "user" : { "screen_name" : "phlatphrog" }, "coordinates" : { "coordinates" : [ -158.09053965, 21.32939642 ] } },
+            { "created_at" : "Sun Mar 18 23:50:01 +0000 2012", "id_str" : "181527908152651776", "text" : "@BicycleRack kapolei blockbuster http://t.co/llLbz4tl", "user" : { "screen_name" : "phlatphrog" } },
+            { "created_at" : "Mon Mar 19 00:03:12 +0000 2012", "id_str" : "181531223598960641", "text" : "@BicycleRack genki sushi kapolei http://t.co/n4EAouyf", "user" : { "screen_name" : "phlatphrog" }, "coordinates" : { "coordinates" : [ -158.09030541, 21.33054656 ] } },
+            { "created_at" : "Sun Mar 18 23:38:53 +0000 2012", "id_str" : "181525104700821504", "text" : "@BicycleRack next to kapolei safeway http://t.co/seJZq8E1", "user" : { "screen_name" : "phlatphrog" }, "coordinates" : { "coordinates" : [ -158.0796573, 21.33871744 ] } },
+            { "created_at" : "Sun Mar 18 23:34:43 +0000 2012", "id_str" : "181524058561716225", "text" : "@BicycleRack between first hawaiian bank and McDonald's http://t.co/D4XU1dIn", "user" : { "screen_name" : "phlatphrog" }, "coordinates" : { "coordinates" : [ -158.07762343, 21.34020757 ] } },
+            { "created_at" : "Sun Mar 18 23:57:40 +0000 2012", "id_str" : "181529833149431808", "text" : "@BicycleRack kapolei officemax http://t.co/mkDiCt1L", "user" : { "screen_name" : "phlatphrog" }, "coordinates" : { "coordinates" : [ -158.09136703, 21.33105377 ] } }
+        ];
+        
+        function create_marker_from_data(datum) {
+            coords = datum['coordinates']
+            if (coords == undefined) {
+                return;
+            }
+            coords = coords['coordinates'];
+            var one_ll = new google.maps.LatLng(coords[1], coords[0]);
+            new google.maps.Marker({
+                position: one_ll,
+                map: map,
+                title: datum['text']
+            });
+        }
+        
+        rack_data.map(create_marker_from_data);
+        
+        // var marker = new google.maps.Marker({
+        //     position: myLatlng,
+        //     map: map,
+        //     title: 'Hello World!'
+        // });
+      }
+    </script>
+  </head>
+  <body onload="initialize()">
+    <div id="map_canvas"></div>
+  </body>
+</html>
+
+
